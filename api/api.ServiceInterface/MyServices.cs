@@ -9,4 +9,9 @@ public class MyServices : Service
     {
         return new HelloResponse { Result = $"Hello, {request.Name}!" };
     }
+
+    public string Any(TestAuthRequest request)
+    {
+        return $"You are authenticated!";
+    }
 }
