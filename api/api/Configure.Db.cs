@@ -22,7 +22,7 @@ public class ConfigureDb : IHostingStartup
             if (!Directory.Exists(appDataPath))
             {
                 //Directory.CreateDirectory(appDataPath);
-                throw new Exception("No App_Data directory found. Please create one and restart the application.");
+                throw new Exception($"No App_Data directory found. Please create one and restart the application: {appDataPath}");
             }
 
 
