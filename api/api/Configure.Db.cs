@@ -81,14 +81,14 @@ public static class SeedHelper
 
     }
 
-    public static void Create(IDbConnection Db)
-    {
-        Db.CreateTableIfNotExists<OrmLiteApplicationUser>();
-        Db.CreateTableIfNotExists<OrmLiteIdentityRole>();
-        Db.CreateTableIfNotExists<OrmLiteIdentityRoleClaim>();
-        Db.CreateTableIfNotExists<OrmLiteIdentityUserRole>();
-        Db.CreateTableIfNotExists<OrmLiteIdentityUserClaim>();
-        Db.CreateTableIfNotExists<OrmLiteIdentityUserLogin>();
-        Db.CreateTableIfNotExists<OrmLiteIdentityUserToken>();
-    }
+    //public static void Create(IDbConnection Db)
+    //{
+    //    Db.CreateTableIfNotExists<OrmLiteApplicationUser>();
+    //    Db.CreateTableIfNotExists<OrmLiteIdentityRole>();
+    //    Db.CreateTableIfNotExists<OrmLiteIdentityRoleClaim>();
+    //    Db.CreateTableIfNotExists<OrmLiteIdentityUserRole>();
+    //    Db.CreateTableIfNotExists<OrmLiteIdentityUserClaim>();
+    //    Db.CreateTableIfNotExists<OrmLiteIdentityUserLogin>();
+    //    Db.CreateTableIfNotExists<OrmLiteIdentityUserToken>();
+    //}
 }
