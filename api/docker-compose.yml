@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: logintest:local
+    container_name: logintest
+    ports:
+      - "5000:80"
+      - "5001:443"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    volumes:
+      - ./api/App_Data:/app/App_Data
+    networks:
+      - nginx
+
+networks:
+  nginx:
+    external: true 
