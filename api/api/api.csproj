@@ -25,7 +25,7 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
     <PackageReference Include="ServiceStack" Version="8.*" />
     <PackageReference Include="ServiceStack.Extensions" Version="8.*" />
-    <PackageReference Include="ServiceStack.OrmLite.Sqlite" Version="8.6.0" />
+    <!--<PackageReference Include="ServiceStack.OrmLite.Sqlite" Version="8.6.0" />-->
     <PackageReference Include="ServiceStack.OrmLite.Sqlite.Data" Version="8.6.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.14" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.14" />
