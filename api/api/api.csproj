@@ -4,8 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RuntimeIdentifiers>win-x64;linux-x64;linux-arm64</RuntimeIdentifiers>
-  </PropertyGroup>
+    </PropertyGroup>
 
   <ItemGroup>
     <Using Include="api" />
@@ -17,7 +16,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.14" PrivateAssets="none" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.14" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.14">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -25,7 +24,8 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
     <PackageReference Include="ServiceStack" Version="8.*" />
     <PackageReference Include="ServiceStack.Extensions" Version="8.*" />
-    <PackageReference Include="ServiceStack.OrmLite.SqlServer" Version="8.6.0" PrivateAssets="none" />
+    <PackageReference Include="ServiceStack.OrmLite.Sqlite" Version="8.6.0" />
+    <PackageReference Include="ServiceStack.OrmLite.Sqlite.Data" Version="8.6.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.14" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.14" />
   </ItemGroup>
