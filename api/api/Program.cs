@@ -11,6 +11,8 @@ public class Program
     public static void Main(string[] args)
     {
 
+        ServiceStack.Licensing.RegisterLicense(@"22969-e3JlZjoyMjk2OSxuYW1lOkRpZ2l0YWwgUmVhY2ggT25saW5lIEx0ZCx0eXBlOkluZGllLG1ldGE6MCxoYXNoOllEVW50blZ4WU1GSTQ3YTdHUjMvUGovS2VuQ2pRSUVndmxuVUdKUENKenJ1WTdTNmVNOHZBNVlsc0tqQ1hpdm9tVUlrRWdXK2ZmWE81SXc1akVRL1VuTHJEMDZ4STJZMGYxZGN5SGVlRnJkWmVaTENCWHRpZEZYd2VKdWplb3l5QVBYQ3pDek9YT1pjaUNWaDNIWEs4Tm5lUDR3RjhqTjV3VWV2aHBoVmg4RT0sZXhwaXJ5OjIwMjUtMTEtMjJ9");
+
         var builder = WebApplication.CreateBuilder(args);
         var services = builder.Services;
 
