@@ -2,19 +2,22 @@
 import { useAuth } from "@/context/auth-context";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const { user, logout } = useAuth();
   const router = useRouter();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (!user) {
       router.push('/signin');
+    } else {
+      setIsLoading(false);
     }
   }, [user, router]);
 
-  if (!user) {
+  if (isLoading || !user) {
     return null; // or a loading spinner
   }
 

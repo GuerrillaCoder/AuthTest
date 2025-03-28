@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function SignInForm() {
-  const { login, loading, user } = useAuth();
+  const { login, loading, user, error: authError, clearError } = useAuth();
   const router = useRouter();
   
   useEffect(() => {
@@ -13,6 +13,13 @@ export default function SignInForm() {
       router.push('/');
     }
   }, [user, router]);
+
+  useEffect(() => {
+    if (authError) {
+      setError(authError);
+      clearError();
+    }
+  }, [authError, clearError]);
 
   const [formData, setFormData] = useState({
     username: "",
@@ -28,7 +35,8 @@ export default function SignInForm() {
     try {
       await login(formData.username, formData.password, formData.rememberMe);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "An error occurred during sign in");
+      // The error is now handled through the authError effect above
+      // Local error state will be updated automatically
     }
   };
 
@@ -99,6 +107,12 @@ export default function SignInForm() {
       >
         {loading ? "Signing in..." : "Sign In"}
       </button>
+
+      {user && (
+        <div className="text-green-500 text-sm text-center">
+          Successfully signed in as {user.userName}
+        </div>
+      )}
     </form>
   );
 }
