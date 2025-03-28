@@ -13,6 +13,7 @@ public class AppHost() : AppHostBase("api"), IHostingStartup
     {
         // Configure ServiceStack, Run custom logic after ASP.NET Core Startup
         SetConfig(new HostConfig {
+            UseSameSiteCookies = false,
         });
     }
 }

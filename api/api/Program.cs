@@ -48,6 +48,13 @@ public class Program
 
         services.AddServiceStack(typeof(MyServices).Assembly);
 
+        services.ConfigureApplicationCookie(options =>
+        {
+            options.Cookie.SameSite = SameSiteMode.None;
+            options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+            options.Cookie.HttpOnly = true;
+        });
+
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
