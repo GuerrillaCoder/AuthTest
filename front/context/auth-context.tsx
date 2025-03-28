@@ -1,6 +1,6 @@
 "use client";
 
-import { Authenticate, AuthenticateResponse } from "@/lib/dtos";
+import { Authenticate, AuthenticateResponse, TestAuthRequest } from "@/lib/dtos";
 import { JsonApiClient, JsonServiceClient } from "@servicestack/client";
 import { usePathname } from "next/navigation";
 import React, {
@@ -48,6 +48,7 @@ export function AuthProvider({ children }: AuthProviderProps): React.JSX.Element
 
   useEffect(() => {
     const client = JsonApiClient.create(process.env.NEXT_PUBLIC_API_URL as string);
+
     client.onAuthenticationRequired = async () => {
       setUser(undefined);
       console.log("Authentication required");
@@ -79,6 +80,9 @@ export function AuthProvider({ children }: AuthProviderProps): React.JSX.Element
 
       setUser(response.response);
       console.log(response.response);
+
+      const test = await client.get(new TestAuthRequest());
+      console.log(test);
 
     } catch (error:any) {
       setUser(undefined);
