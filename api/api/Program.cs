@@ -65,9 +65,26 @@ public class Program
         app.UseAuthentication();
         app.UseAuthorization();
 
+        EnsureDatabaseCreated(app.Services);
+
         app.UseServiceStack(new AppHost(), options => { options.MapEndpoints(); });
 
         app.Run();
 
+    }
+
+    public static void EnsureDatabaseCreated(IServiceProvider serviceProvider)
+    {
+        using var scope = serviceProvider.CreateScope();
+        var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+
+        // This will create the database file if it doesn't exist
+        dbContext.Database.EnsureCreated();
+
+        // // Check if migrations need to be applied and apply them
+        // if (dbContext.Database.GetPendingMigrations().Any())
+        // {
+        //     dbContext.Database.Migrate();
+        // }
     }
 }
